@@ -6,6 +6,23 @@ This project implements two key VideoSDK features:
 1. `switchTo()` - Seamless transition between rooms (Normal Room Switching)
 2. `requestMediaRelay()` - Cross-room media streaming (Media Relay)
 
+# Screenshots
+
+# Join Screen
+![Join Screen](public/screenshots/join-screen.png)
+
+# Active Meeting
+![Active Meeting](public/screenshots/meeting-view.png)
+
+# Meeting Room
+![Meeting Room](public/screenshots/meeting-room.png)
+
+# Room Switching
+![Room Switch](public/screenshots/room-switch.png)
+
+# Demo
+![Room Switching Demo](public/screenshots/demo.gif)
+
 # Features
 # Implemented Features
 - Create and join VideoSDK rooms
