@@ -26,7 +26,6 @@ function RoomSwitchModal({ currentMeetingId, onClose }) {
 
     setLoading(true);
     try {
-      console.log(`Switching from ${currentMeetingId} to ${targetRoomId}`);
       await switchTo({
         meetingId: targetRoomId,
         token: authToken,
@@ -55,10 +54,6 @@ function RoomSwitchModal({ currentMeetingId, onClose }) {
     }
     setLoading(true);
     try {
-      console.log(
-        `Requesting media relay to ${targetRoomId} with kinds:`,
-        kinds
-      );
       await requestMediaRelay({
         destinationMeetingId: targetRoomId,
         token: authToken,
@@ -231,9 +226,6 @@ function MediaRelayHandler() {
       accept,
       reject,
     }) => {
-      console.log(
-        `Media relay request from ${displayName} (Room: ${meetingId})`
-      );
       setPendingRequest({
         participantId,
         meetingId,
@@ -251,9 +243,6 @@ function MediaRelayHandler() {
       alert(`Media relay started! You're now streaming to room: ${meetingId}`);
     },
     onMediaRelayStopped: ({ meetingId, reason }) => {
-      console.log(
-        `Media relay stopped (Room: ${meetingId}, Reason: ${reason})`
-      );
       alert(`Media relay stopped\nRoom: ${meetingId}\nReason: ${reason}`);
     },
     onMediaRelayError: (meetingId, error) => {
@@ -519,7 +508,6 @@ function MeetingView(props) {
   const { join, participants, meetingId } = useMeeting({
     onMeetingJoined: () => {
       setJoined("JOINED");
-      console.log("Meeting joined successfully!");
     },
     onMeetingLeft: () => {
       props.onMeetingLeave();

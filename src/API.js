@@ -2,8 +2,6 @@ export const authToken = process.env.REACT_APP_VIDEOSDK_AUTH_TOKEN;
 
 // eslint-disable-next-line
 export const createMeeting = async () => {
-    console.log(authToken);
-    
   const res = await fetch(`https://api.videosdk.live/v2/rooms`, {
     method: "POST",
     headers: {
